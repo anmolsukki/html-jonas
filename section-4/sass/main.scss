@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$primary-color: #f9ed69;
+$secondary-color: #f08a5d;
+$tertiary-color: #b83b5e;
+$color-text-dark: #333333;
+$color-text-light: #eeeeee;
+
+$width-button: 150px;
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin style-link-text($color) {
+    text-decoration: none;
+    text-transform: none;
+    color: $color;
+}
+
+nav {
+    margin: 30px;
+    background-color: $primary-color;
+    @include clearfix
+}
+
+.navigation {
+    list-style: none;
+    float: left;
+    li {
+        display: inline-block;
+        margin-left: 30px;
+        &:first-child {
+            margin: 0;
+        }
+        a {
+            @include style-link-text($color-text-dark);
+        }
+    }
+}
+
+.buttons {
+    float: right;
+}
+
+.btn-main:link,
+.btn-hot:link {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    width: $width-button;
+    @include style-link-text($color-text-light);
+}
+
+.btn-main {
+    &:link {
+        background-color: $secondary-color;
+    }
+    &:hover {
+        background-color: darkblue($secondary-color, 15%);
+    }
+}
+
+.btn-hot {
+    &:link {
+        background-color: $tertiary-color;
+    }
+    &:hover {
+        background-color: lighten($tertiary-color, 15%);
+    }
+}

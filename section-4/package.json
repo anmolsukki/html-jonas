@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass sass/main.scss css/style.css -w"
+    "start": "node-sass sass/main.scss compileCss/sassStyle.css -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "anmolsukki",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.14.1"
